@@ -4,9 +4,55 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AqoonQuiz.UI"
+        xmlns:sound="clr-namespace:AqoonQuiz.UI.Controlls"
         mc:Ignorable="d"
-        Title="StartupWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+        Title="StartupWindow" Height="450" Width="800" MinWidth="800" MinHeight="450" WindowStartupLocation="CenterScreen">
     <Window.Background>
         <ImageBrush ImageSource="/UI/DesignImages/Aqoon.png" Stretch="Fill"/>
     </Window.Background>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="2.4*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="0.6*"></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Border x:Name="FrameBorder" Grid.Row="1" Grid.Column="2"  Background="#f2bbb0" CornerRadius="10">
+            <Viewbox Stretch="Uniform">
+                <StackPanel>
+                    <TextBlock Text="AQOON QUIZ" Style="{DynamicResource MainText}"  FontWeight="Bold" HorizontalAlignment="Center" FontSize="20" />
+                    <Separator Margin="0 5 0 5" Background="White"></Separator>
+                    <TextBlock Style="{DynamicResource MainText}" Margin="5" FontSize="14" TextWrapping="Wrap" >
+                        "Want to test your general knowledge? Then you are in 
+                        <LineBreak/>a rigth place. Aqoon database has almost 10000+ questions.
+                        <LineBreak/>
+                        The level of difficulty in this game is already sorted,
+                        <LineBreak/>
+                        so players will feel continuously challenged to solve
+                        <LineBreak/>
+                        the problems that exist.
+                        <LineBreak/>
+                    </TextBlock>
+                    <Grid x:Name="buttonGrid">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="3*"></RowDefinition>
+                            <RowDefinition Height="1*"></RowDefinition>
+                            <RowDefinition Height="3*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="3*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Button Grid.Column="1" Grid.Row="2" FontFamily="Baskerville Old Face" Style="{DynamicResource RoundCorner}" x:Name="PlayButton" Content="Let's play" FontSize="20" Foreground="#fff" Margin="0 40" Width="200" Height="33"/>
+                    </Grid>
+                </StackPanel>
+            </Viewbox>
+        </Border>
+    </Grid>
 </Window>

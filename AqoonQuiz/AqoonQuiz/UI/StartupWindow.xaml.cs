@@ -19,14 +19,8 @@ namespace AqoonQuiz.UI
     {
         public StartupWindow()
         {
-            try
-            {
                 InitializeComponent();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
         }
+
     }
 }
