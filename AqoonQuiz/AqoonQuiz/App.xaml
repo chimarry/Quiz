@@ -2,8 +2,8 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:AqoonQuiz"
-             StartupUri=""> <!--Define startup uri = MainWindow.cs-->
+             StartupUri="UI/StartupWindow.xaml">
     <Application.Resources>
-         
+
     </Application.Resources>
 </Application>
