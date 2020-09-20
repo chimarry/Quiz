@@ -49,7 +49,7 @@
                             <ColumnDefinition Width="3*"></ColumnDefinition>
                             <ColumnDefinition Width="*"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
-                        <Button Grid.Column="1" Grid.Row="2" FontFamily="Baskerville Old Face" Style="{DynamicResource RoundCorner}" x:Name="PlayButton" Content="Let's play" FontSize="20" Foreground="#fff" Margin="0 40" Width="200" Height="33"/>
+                        <Button Grid.Column="1" Grid.Row="2" FontFamily="Baskerville Old Face" Style="{DynamicResource RoundCorner}" x:Name="PlayButton" Content="Let's play" FontSize="20" Foreground="#fff" Margin="0 40" Width="200" Height="33" Click="PlayButton_Click"/>
                     </Grid>
                 </StackPanel>
             </Viewbox>

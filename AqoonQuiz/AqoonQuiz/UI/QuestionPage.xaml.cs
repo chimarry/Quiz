@@ -8,25 +8,24 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace AqoonQuiz.UI
 {
     /// <summary>
-    /// Interaction logic for StartupWindow.xaml
+    /// Interaction logic for QuestionPage.xaml
     /// </summary>
-    public partial class StartupWindow : Window
+    public partial class QuestionPage : Page
     {
-        public StartupWindow()
+        public QuestionPage()
         {
-                InitializeComponent();
+            InitializeComponent();
         }
 
-        private void PlayButton_Click(object sender, RoutedEventArgs e)
+        public void InitializeScoreTracking()
         {
-            Window window = new QuestionWindow();
-            this.Close();
-            window.Show();
+
         }
     }
 }
