@@ -37,10 +37,10 @@
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <Button Grid.Column="0" Grid.Row="0" FontFamily="Baskerville Old Face" Style="{DynamicResource RoundCorner}" x:Name="ResponseA" Content="Jim Argast" FontSize="16" Foreground="#fff" Margin="0 20" Width="180" Height="33"/>
-                        <Button Grid.Column="1" Grid.Row="0" FontFamily="Baskerville Old Face" Style="{DynamicResource RoundCorner}" x:Name="ResponseB" Content="Tony Malino" FontSize="16" Foreground="#fff" Margin="0 20" Width="180" Height="33"/>
-                        <Button Grid.Column="0" Grid.Row="1" FontFamily="Baskerville Old Face" Style="{DynamicResource RoundCorner}" x:Name="ResponseC" Content="Frederic Roger-Johnson" FontSize="16" Foreground="#fff" Margin="0 20" Width="180" Height="33"/>
-                        <Button Grid.Column="1" Grid.Row="1" FontFamily="Baskerville Old Face" Style="{DynamicResource RoundCorner}" x:Name="ResponseD" Content="Ivan Miskov" FontSize="16" Foreground="#fff" Margin="0 20" Width="180" Height="33"/>
+                        <Button Grid.Column="0" Grid.Row="0" FontFamily="Baskerville Old Face" Style="{DynamicResource RoundCorner}" x:Name="AnswerA" Content="Jim Argast" FontSize="16" Foreground="#fff" Margin="0 20" Width="180" Height="33" Click="Answer_Click"/>
+                        <Button Grid.Column="1" Grid.Row="0" FontFamily="Baskerville Old Face" Style="{DynamicResource RoundCorner}" x:Name="AnswerB" Content="Tony Malino" FontSize="16" Foreground="#fff" Margin="0 20" Width="180" Height="33" Click="Answer_Click"/>
+                        <Button Grid.Column="0" Grid.Row="1" FontFamily="Baskerville Old Face" Style="{DynamicResource RoundCorner}" x:Name="AnswerC" Content="Frederic Roger-Johnson" FontSize="16" Foreground="#fff" Margin="0 20" Width="180" Height="33" Click="Answer_Click"/>
+                        <Button Grid.Column="1" Grid.Row="1" FontFamily="Baskerville Old Face" Style="{DynamicResource RoundCorner}" x:Name="AnswerD" Content="Ivan Miskov" FontSize="16" Foreground="#fff" Margin="0 20" Width="180" Height="33" Click="Answer_Click"/>
                     </Grid>
                 </StackPanel>
             </Viewbox>

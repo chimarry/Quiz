@@ -27,5 +27,10 @@ namespace AqoonQuiz.UI
         {
 
         }
+
+        private void Answer_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
