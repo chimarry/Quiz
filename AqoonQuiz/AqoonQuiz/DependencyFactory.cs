@@ -1,4 +1,5 @@
 ﻿using AqoonQuiz.ErrorHandling;
+using AqoonQuiz.Managers;
 using Serilog;
 using System;
 using System.IO;
@@ -21,5 +22,8 @@ namespace AqoonQuiz
                                             .WriteTo.File($"log-{DateTime.Now}.txt")
                                             .CreateLogger());
         }
+
+        public static IQuestionManager GetQuestionManager()
+            => new QuestionManager(GetLogger());
     }
 }

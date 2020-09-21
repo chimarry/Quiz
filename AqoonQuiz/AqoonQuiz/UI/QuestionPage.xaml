@@ -25,9 +25,7 @@
         <Border x:Name="FrameBorder" Grid.Row="1" Grid.RowSpan="2" Grid.Column="1"  Background="#f2bbb0" CornerRadius="10">
             <Viewbox Stretch="Uniform">
                 <StackPanel>
-                    <TextBlock TextWrapping="Wrap" Style="{DynamicResource MainText}"  FontWeight="Bold" HorizontalAlignment="Center" FontSize="20">
-                       What was the name of the <LineBreak></LineBreak> main actor in popular TV show 'Friends'?
-                    </TextBlock>
+                    <TextBlock x:Name="QuestionTextBlock" MaxWidth="300" TextWrapping="Wrap" Style="{DynamicResource MainText}"  FontWeight="Bold" HorizontalAlignment="Center" FontSize="20"/>
                     <Grid x:Name="ReponsesGrid">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*"/>
@@ -37,10 +35,10 @@
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <Button Grid.Column="0" Grid.Row="0" FontFamily="Baskerville Old Face" Style="{DynamicResource AnwerButton}" x:Name="AnswerA" Content="Jim Argast"  Click="Answer_Click"/>
-                        <Button Grid.Column="1" Grid.Row="0" FontFamily="Baskerville Old Face" Style="{DynamicResource AnwerButton}" x:Name="AnswerB" Content="Tony Malino" Click="Answer_Click"/>
-                        <Button Grid.Column="0" Grid.Row="1" FontFamily="Baskerville Old Face" Style="{DynamicResource AnwerButton}" x:Name="AnswerC" Content="Frederic Roger-Johnson"  Click="Answer_Click"/>
-                        <Button Grid.Column="1" Grid.Row="1" FontFamily="Baskerville Old Face" Style="{DynamicResource AnwerButton}" x:Name="AnswerD" Content="Ivan Miskov" Click="Answer_Click"/>
+                        <Button x:Name="AnswerA" Margin="10 20" Grid.Column="0" Grid.Row="0" FontFamily="Baskerville Old Face" Style="{DynamicResource AnwerButton}" Click="Answer_Click"/>
+                        <Button x:Name="AnswerB" Margin="10 20" Grid.Column="1" Grid.Row="0" FontFamily="Baskerville Old Face" Style="{DynamicResource AnwerButton}"  Click="Answer_Click"/>
+                        <Button x:Name="AnswerC" Margin="10 20" Grid.Column="0" Grid.Row="1" FontFamily="Baskerville Old Face" Style="{DynamicResource AnwerButton}"   Click="Answer_Click"/>
+                        <Button x:Name="AnswerD" Margin="10 20" Grid.Column="1" Grid.Row="1" FontFamily="Baskerville Old Face" Style="{DynamicResource AnwerButton}" Click="Answer_Click"/>
                     </Grid>
                 </StackPanel>
             </Viewbox>

@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.Threading.Tasks;
+using System.Windows;
 
 namespace AqoonQuiz.UI
 {
@@ -7,10 +8,17 @@ namespace AqoonQuiz.UI
     /// </summary>
     public partial class QuestionWindow : Window
     {
-        public QuestionWindow()
+        private QuestionWindow()
         {
             InitializeComponent();
-            QuestionFrame.Content = new QuestionPage();
+        }
+
+        public static async Task<QuestionWindow> CreateQuestionWindow()
+        {
+            QuestionWindow questionWindow = new QuestionWindow();
+            QuestionPage page = await QuestionPage.CreateQuestionPage();
+            questionWindow.QuestionFrame.Content = page;
+            return questionWindow;
         }
     }
 }

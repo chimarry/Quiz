@@ -8,7 +8,7 @@
         Title="QuestionWindow" Height="450" Width="800" MinWidth="800" MinHeight="450" WindowStartupLocation="CenterScreen">
     <Grid>
         <Frame x:Name="QuestionFrame" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-            
+
         </Frame>
     </Grid>
 </Window>

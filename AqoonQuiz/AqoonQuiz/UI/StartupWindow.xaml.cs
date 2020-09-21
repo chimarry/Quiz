@@ -1,14 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace AqoonQuiz.UI
 {
@@ -19,12 +10,16 @@ namespace AqoonQuiz.UI
     {
         public StartupWindow()
         {
-                InitializeComponent();
+            InitializeComponent();
         }
 
-        private void PlayButton_Click(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// When play button is clicked, delegate the call to the question window,
+        /// responsible for initalizing quiz.
+        /// </summary>
+        private async void PlayButton_Click(object sender, RoutedEventArgs e)
         {
-            Window window = new QuestionWindow();
+            Window window = await QuestionWindow.CreateQuestionWindow();
             this.Close();
             window.Show();
         }
