@@ -4,10 +4,11 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:AqoonQuiz.UI"
+      xmlns:customControls="clr-namespace:AqoonQuiz.UI.Controlls"
       mc:Ignorable="d" 
      MinWidth="800" MinHeight="450"
       Title="QuestionPage"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-    <Grid>
+    <Grid x:Name="MainGrid">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="2*"/>
@@ -25,7 +26,10 @@
         <Border x:Name="FrameBorder" Grid.Row="1" Grid.RowSpan="2" Grid.Column="1"  Background="#f2bbb0" CornerRadius="10">
             <Viewbox Stretch="Uniform">
                 <StackPanel>
-                    <TextBlock x:Name="QuestionTextBlock" MaxWidth="300" TextWrapping="Wrap" Style="{DynamicResource MainText}"  FontWeight="Bold" HorizontalAlignment="Center" FontSize="20"/>
+                    <Viewbox  MaxWidth="400" MaxHeight="50" Margin="5 0 5 0">
+                        <TextBlock x:Name="QuestionTextBlock" MaxWidth="400" TextWrapping="Wrap" Style="{DynamicResource MainText}"  FontWeight="Bold" HorizontalAlignment="Center" FontSize="20"/>
+                    </Viewbox>
+                    <Separator  Background="White"/>
                     <Grid x:Name="ReponsesGrid">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*"/>
@@ -40,6 +44,12 @@
                         <Button x:Name="AnswerC" Margin="10 20" Grid.Column="0" Grid.Row="1" FontFamily="Baskerville Old Face" Style="{DynamicResource AnwerButton}"   Click="Answer_Click"/>
                         <Button x:Name="AnswerD" Margin="10 20" Grid.Column="1" Grid.Row="1" FontFamily="Baskerville Old Face" Style="{DynamicResource AnwerButton}" Click="Answer_Click"/>
                     </Grid>
+                    <Separator Margin="0 5 0 5" Background="White"/>
+                    <Button x:Name="NextPageButton" Background="Transparent" IsEnabled="False" BorderThickness="0" Click="NextPageButton_Click" Style="{DynamicResource TransparentFocus}">
+                        <StackPanel >
+                            <Image  Source="/UI/DesignImages/Next.png" />
+                        </StackPanel>
+                    </Button>
                 </StackPanel>
             </Viewbox>
         </Border>

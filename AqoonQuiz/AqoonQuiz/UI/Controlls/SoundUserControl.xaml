@@ -5,11 +5,9 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:AqoonQuiz.UI.Controlls"
              mc:Ignorable="d" >
-    <Button x:Name="SoundButton" Click="SoundButton_Click">
-        <Button.Template>
-            <ControlTemplate>
-                <Image Source="/UI/DesignImages/sound.png" />
-            </ControlTemplate>
-        </Button.Template>
+    <Button x:Name="SoundButton" Background="Transparent" BorderThickness="0">
+        <StackPanel >
+            <Image  Source="/UI/DesignImages/Sound.png" />
+        </StackPanel>
     </Button>
 </UserControl>

@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
+using System.Windows.Shapes;
 
 namespace AqoonQuiz.UI
 {
@@ -36,25 +37,30 @@ namespace AqoonQuiz.UI
             return questionPage;
         }
 
-        private async void Answer_Click(object sender, RoutedEventArgs e)
-        {
-            Button clickedAnswerButton = (Button)sender;
-            Answer correctAnswer = Quiz.ChooseAnswer(clickedAnswerButton.Content.ToString());
-            ColorButtons(clickedAnswerButton.Content.ToString(), correctAnswer.Content);
-            await Task.Run(() => Thread.Sleep(1500));
-        }
-
-
         public void ColorButtons(string choosenAnswer, string correctAnswer)
         {
             List<Button> answerButtons = new List<Button>() { AnswerA, AnswerB, AnswerC, AnswerD };
             answerButtons.ForEach(x =>
-              {
-                  if (x.Content.ToString() == correctAnswer)
-                      x.Style = (Style)Application.Current.Resources["CorrectAnswer"];
-                  else if (choosenAnswer != correctAnswer && x.Content.ToString() == choosenAnswer)
-                      x.Style = (Style)Application.Current.Resources["WrongAnswer"];
-              });
+            {
+                if (x.Content.ToString() == correctAnswer)
+                    x.Style = (Style)Application.Current.Resources["CorrectAnswer"];
+                else if (choosenAnswer != correctAnswer && x.Content.ToString() == choosenAnswer)
+                    x.Style = (Style)Application.Current.Resources["WrongAnswer"];
+            });
+        }
+
+        private void Answer_Click(object sender, RoutedEventArgs e)
+        {
+            Button clickedAnswerButton = (Button)sender;
+            Answer correctAnswer = Quiz.ChooseAnswer(clickedAnswerButton.Content.ToString());
+            ColorButtons(clickedAnswerButton.Content.ToString(), correctAnswer.Content);
+            NextPageButton.IsEnabled = true;
+        }
+
+        private async void NextPageButton_Click(object sender, RoutedEventArgs e)
+        {
+            ((QuestionWindow)Window.GetWindow(this)).QuestionFrame
+                                                    .Navigate(await CreateQuestionPage(Quiz));
         }
     }
 }
