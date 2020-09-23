@@ -14,6 +14,7 @@
     <None Remove="UI\DesignImages\Next.png" />
     <None Remove="UI\DesignImages\PinkyWin.png" />
     <None Remove="UI\DesignImages\Question.png" />
+    <None Remove="UI\Music\Theme.mp3" />
     <None Remove="UI\Theme.mp3" />
   </ItemGroup>
 

@@ -9,7 +9,7 @@
         Title="QuestionWindow" Height="450" Width="800" MinWidth="800" MinHeight="450" WindowStartupLocation="CenterScreen">
 
     <Grid>
-        <MediaElement Name="soundMediaElement" />
+        <MediaElement Name="soundMediaElement"/>
         <Frame Grid.Row="1" x:Name="QuestionFrame" NavigationUIVisibility="Hidden" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
         </Frame>
     </Grid>
@@ -17,8 +17,8 @@
         <EventTrigger RoutedEvent="Window.Loaded">
             <EventTrigger.Actions>
                 <BeginStoryboard>
-                    <Storyboard>
-                        <MediaTimeline Source="/UI/Music/Theme.mp3" RepeatBehavior="Forever" Storyboard.TargetName="soundMediaElement"/>
+                    <Storyboard >
+                        <MediaTimeline x:Name="MediaTimelineElement"  RepeatBehavior="Forever" Storyboard.TargetName="soundMediaElement"/>
                     </Storyboard>
                 </BeginStoryboard>
             </EventTrigger.Actions>

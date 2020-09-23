@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using System.Windows;
 
 namespace AqoonQuiz.UI
@@ -11,6 +12,7 @@ namespace AqoonQuiz.UI
         private QuestionWindow()
         {
             InitializeComponent();
+            AddMusic();
         }
 
         public static async Task<QuestionWindow> CreateQuestionWindow()
@@ -19,6 +21,11 @@ namespace AqoonQuiz.UI
             QuestionPage page = await QuestionPage.CreateQuestionPage();
             questionWindow.QuestionFrame.Content = page;
             return questionWindow;
+        }
+
+        private void AddMusic()
+        {
+            MediaTimelineElement.Source = new Uri(@"UI/Music/Theme.mp3", UriKind.Relative);
         }
     }
 }
