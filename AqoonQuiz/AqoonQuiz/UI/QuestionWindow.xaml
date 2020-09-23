@@ -5,9 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AqoonQuiz.UI"
         mc:Ignorable="d"
+        x:Name="mainWindow"
         Title="QuestionWindow" Height="450" Width="800" MinWidth="800" MinHeight="450" WindowStartupLocation="CenterScreen">
+
     <Grid>
+        <MediaElement Name="soundMediaElement" />
         <Frame Grid.Row="1" x:Name="QuestionFrame" NavigationUIVisibility="Hidden" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
         </Frame>
     </Grid>
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="Window.Loaded">
+            <EventTrigger.Actions>
+                <BeginStoryboard>
+                    <Storyboard>
+                        <MediaTimeline Source="/UI/Music/Theme.mp3" RepeatBehavior="Forever" Storyboard.TargetName="soundMediaElement"/>
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger.Actions>
+        </EventTrigger>
+    </Window.Triggers>
 </Window>

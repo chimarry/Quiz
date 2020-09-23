@@ -14,6 +14,7 @@
     <None Remove="UI\DesignImages\Next.png" />
     <None Remove="UI\DesignImages\PinkyWin.png" />
     <None Remove="UI\DesignImages\Question.png" />
+    <None Remove="UI\Theme.mp3" />
   </ItemGroup>
 
   <ItemGroup>
@@ -36,13 +37,13 @@
     <Content Include="UI\DesignImages\Question.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="UI\Music\Theme.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Data\Questions.csv">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Data\Questions2.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>
