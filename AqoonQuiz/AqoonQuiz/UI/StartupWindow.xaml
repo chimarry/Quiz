@@ -21,27 +21,6 @@
             <ColumnDefinition Width="2*"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <StackPanel>
-
-            <!-- The MediaElement control plays the sound. -->
-            <MediaElement Name="myMediaElement" />
-
-            <Button>Click to Hear a Sound!
-                <Button.Triggers>
-                    <EventTrigger RoutedEvent="Button.Click">
-                        <EventTrigger.Actions>
-                            <BeginStoryboard>
-                                <Storyboard>
-
-                                    <!-- Sound wave from this source is played when the button is clicked.-->
-                                    <MediaTimeline Source="C:\Users\Marija\Desktop\HCI\Application1\Quiz\AqoonQuiz\AqoonQuiz\UI\Music\Theme.mp3"  Storyboard.TargetName="myMediaElement"  />
-                                </Storyboard>
-                            </BeginStoryboard>
-                        </EventTrigger.Actions>
-                    </EventTrigger>
-                </Button.Triggers>
-            </Button>
-        </StackPanel>
         <Border x:Name="FrameBorder" Grid.Row="1" Grid.Column="2"  Background="#f2bbb0" CornerRadius="10">
             <Viewbox Stretch="Uniform">
                 <StackPanel>

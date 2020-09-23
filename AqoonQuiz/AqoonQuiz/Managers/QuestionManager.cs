@@ -13,7 +13,6 @@ namespace AqoonQuiz.Managers
         private readonly IAqoonLogger aqoonLogger;
         private const int questionOffset = 0;
         private const int correctAnswerOffset = 1;
-        private const string CSVSeparator = "#";
 
         public QuestionManager(IAqoonLogger aqoonLogger)
         {
@@ -24,7 +23,7 @@ namespace AqoonQuiz.Managers
         /// Returns list of questions with shuffled answers from csv file marked as embedded resource.
         /// </summary>
         /// <param name="count">Number of questions to return.</param>
-        /// <returns></returns>
+        /// <returns>List of questions or in case of an error - empty list</returns>
         public async Task<List<Question>> GetQuestions(int count)
         {
             try
@@ -51,9 +50,14 @@ namespace AqoonQuiz.Managers
             }
         }
 
+        /// <summary>
+        /// Parse question from line from csv file, based on CSVSeparator
+        /// </summary>
+        /// <param name="line">Line with question and answers, where first answer is correct one</param>
+        /// <returns>Initialized question</returns>
         private Question ParseQuestion(string line)
         {
-            string[] questionAndAnswers = line.Split(CSVSeparator);
+            string[] questionAndAnswers = line.Split(Properties.Default.CSVSeparator);
             Question question = new Question()
             {
                 Content = questionAndAnswers[questionOffset],

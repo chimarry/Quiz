@@ -31,5 +31,14 @@ namespace AqoonQuiz {
                 return ((int)(this["TotalNumberOfQuestions"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("#")]
+        public char CSVSeparator {
+            get {
+                return ((char)(this["CSVSeparator"]));
+            }
+        }
     }
 }
