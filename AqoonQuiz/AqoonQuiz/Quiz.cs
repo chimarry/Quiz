@@ -13,8 +13,8 @@ namespace AqoonQuiz
 
         public static int TotalNumberOfQuestions = Properties.Default.TotalNumberOfQuestions;
 
-        private int correctAnswersCount { get; set; }
-        private int wrongAnswersCount { get; set; }
+        public int CorrectAnswersCount { get; private set; }
+        public int WrongAnswersCount { get; private set; }
 
         public Question CurrentQuestion
         {
@@ -26,6 +26,8 @@ namespace AqoonQuiz
         {
 
         }
+
+        public bool IsOver() => Questions.Count() == 1;
 
         public static async Task<Quiz> CreateQuiz(Quiz configuredQuiz = null)
         {
@@ -58,9 +60,9 @@ namespace AqoonQuiz
             {
                 Answer correctAnswer = CurrentQuestion.Answers.First(x => x.IsCorrect);
                 if (correctAnswer.Content == chosenAnswersContent)
-                    correctAnswersCount++;
+                    CorrectAnswersCount++;
                 else
-                    wrongAnswersCount++;
+                    WrongAnswersCount++;
                 return correctAnswer;
             }
             catch (InvalidOperationException)

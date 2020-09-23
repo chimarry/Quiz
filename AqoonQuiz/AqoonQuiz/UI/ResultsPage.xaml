@@ -1,0 +1,45 @@
+﻿<Page x:Class="AqoonQuiz.UI.ResultsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:AqoonQuiz.UI"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ResultsPage">
+    <Grid x:Name="MainGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.Background>
+            <ImageBrush ImageSource="/UI/DesignImages/BrainLost.png" />
+        </Grid.Background>
+        <Viewbox Stretch="Uniform" Grid.Row="0">
+            <StackPanel>
+                <Viewbox  MaxWidth="400" MaxHeight="50" Margin="5 0 5 0">
+                    <TextBlock MaxWidth="400" TextWrapping="Wrap" Style="{DynamicResource MainText}"  FontWeight="Bold" HorizontalAlignment="Center" FontSize="30">
+                        FINAL RESULT
+                    </TextBlock>
+                </Viewbox>
+            </StackPanel>
+        </Viewbox>
+        <Viewbox Stretch="Uniform" Grid.Row="1">
+            <StackPanel>
+                <Viewbox  MaxWidth="400" MaxHeight="50" Margin="5 0 5 0">
+                    <TextBlock x:Name="FinalResultTextBlock" MaxWidth="400" TextWrapping="Wrap" Style="{DynamicResource MainText}"  FontWeight="Bold" HorizontalAlignment="Center" FontSize="30">
+                    </TextBlock>
+                </Viewbox>
+            </StackPanel>
+        </Viewbox>
+        <Viewbox Grid.Row="2">
+            <Button FontFamily="Baskerville Old Face" Style="{DynamicResource RoundCorner}" x:Name="PlayButton" Content="Play again" FontSize="40" Foreground="#fff" Margin="0 40" Width="250" Height="60" Click="PlayButton_Click"/>
+        </Viewbox>
+    </Grid>
+</Page>

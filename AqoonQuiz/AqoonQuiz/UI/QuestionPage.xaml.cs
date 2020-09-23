@@ -16,6 +16,8 @@ namespace AqoonQuiz.UI
         public enum QuestionOrder { A, B, C, D }
         public Quiz Quiz { get; set; }
 
+        private const string emptySpace = " ";
+
         private QuestionPage()
         {
             InitializeComponent();
@@ -27,7 +29,9 @@ namespace AqoonQuiz.UI
             {
                 Quiz = await Quiz.CreateQuiz(previousQuiz)
             };
-            questionPage.QuestionTextBlock.Text = questionPage.Quiz.CurrentQuestion.Content;
+            InitializeTextBlock(questionPage.QuestionTextBlock, questionPage.Quiz.CurrentQuestion.Content);
+            InitializeTextBlock(questionPage.CorrectTextBlock, questionPage.Quiz.CorrectAnswersCount.ToString());
+            InitializeTextBlock(questionPage.AnsweredTextBlock, $"{questionPage.Quiz.CorrectAnswersCount + questionPage.Quiz.WrongAnswersCount} / {Quiz.TotalNumberOfQuestions}");
             List<Answer> answers = questionPage.Quiz.CurrentQuestion.Answers;
             string GetAnswer(QuestionOrder order) => answers[(int)order].Content;
             questionPage.AnswerA.Content = GetAnswer(QuestionOrder.A);
@@ -35,6 +39,11 @@ namespace AqoonQuiz.UI
             questionPage.AnswerC.Content = GetAnswer(QuestionOrder.C);
             questionPage.AnswerD.Content = GetAnswer(QuestionOrder.D);
             return questionPage;
+        }
+
+        public static void InitializeTextBlock(TextBlock textBlock, string message)
+        {
+            textBlock.Text = emptySpace + message;
         }
 
         public void ColorButtons(string choosenAnswer, string correctAnswer)
@@ -46,6 +55,7 @@ namespace AqoonQuiz.UI
                     x.Style = (Style)Application.Current.Resources["CorrectAnswer"];
                 else if (choosenAnswer != correctAnswer && x.Content.ToString() == choosenAnswer)
                     x.Style = (Style)Application.Current.Resources["WrongAnswer"];
+                x.IsEnabled = false;
             });
         }
 
@@ -59,8 +69,12 @@ namespace AqoonQuiz.UI
 
         private async void NextPageButton_Click(object sender, RoutedEventArgs e)
         {
+            object nextPage;
+            if (!Quiz.IsOver())
+                nextPage = await CreateQuestionPage(Quiz);
+            else nextPage = new ResultsPage(Quiz.CorrectAnswersCount);
             ((QuestionWindow)Window.GetWindow(this)).QuestionFrame
-                                                    .Navigate(await CreateQuestionPage(Quiz));
+                                                    .Navigate(nextPage);
         }
     }
 }

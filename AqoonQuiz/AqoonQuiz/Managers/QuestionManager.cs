@@ -13,6 +13,7 @@ namespace AqoonQuiz.Managers
         private readonly IAqoonLogger aqoonLogger;
         private const int questionOffset = 0;
         private const int correctAnswerOffset = 1;
+        private const string CSVSeparator = "#";
 
         public QuestionManager(IAqoonLogger aqoonLogger)
         {
@@ -52,7 +53,7 @@ namespace AqoonQuiz.Managers
 
         private Question ParseQuestion(string line)
         {
-            string[] questionAndAnswers = line.Split(",");
+            string[] questionAndAnswers = line.Split(CSVSeparator);
             Question question = new Question()
             {
                 Content = questionAndAnswers[questionOffset],

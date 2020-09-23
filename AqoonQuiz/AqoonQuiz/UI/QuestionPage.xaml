@@ -16,13 +16,27 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1.2*"/>
-            <ColumnDefinition Width="2*"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="1.3*"/>
+            <ColumnDefinition Width="2.1*"/>
+            <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
         <Grid.Background>
             <ImageBrush ImageSource="/UI/DesignImages/Question.png" />
         </Grid.Background>
+        <Border x:Name="ScoreBorder" Grid.Row="1" Margin="40 0 40 40"  Grid.Column="3"  Background="#f2bbb0" CornerRadius="10">
+            <Viewbox Stretch="Uniform" Margin="10 10 10 10">
+                <StackPanel Grid.Column="0"  Margin="0 2 0 0">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Style="{DynamicResource MainText}" FontSize="20" FontWeight="Bold" VerticalAlignment="Center">Answered</TextBlock>
+                        <TextBlock x:Name="AnsweredTextBlock" Style="{DynamicResource MainText}" FontWeight="Bold" FontSize="20" VerticalAlignment="Center"></TextBlock>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Style="{DynamicResource MainText}" FontSize="20" FontWeight="Bold" VerticalAlignment="Center">Correct:</TextBlock>
+                        <TextBlock x:Name="CorrectTextBlock" Style="{DynamicResource MainText}" FontWeight="Bold" FontSize="20" VerticalAlignment="Center"></TextBlock>
+                    </StackPanel>
+                </StackPanel>
+            </Viewbox>
+        </Border>
         <Border x:Name="FrameBorder" Grid.Row="1" Grid.RowSpan="2" Grid.Column="1"  Background="#f2bbb0" CornerRadius="10">
             <Viewbox Stretch="Uniform">
                 <StackPanel>
@@ -45,11 +59,20 @@
                         <Button x:Name="AnswerD" Margin="10 20" Grid.Column="1" Grid.Row="1" FontFamily="Baskerville Old Face" Style="{DynamicResource AnwerButton}" Click="Answer_Click"/>
                     </Grid>
                     <Separator Margin="0 5 0 5" Background="White"/>
-                    <Button x:Name="NextPageButton" Background="Transparent" IsEnabled="False" BorderThickness="0" Click="NextPageButton_Click" Style="{DynamicResource TransparentFocus}">
-                        <StackPanel >
-                            <Image  Source="/UI/DesignImages/Next.png" />
-                        </StackPanel>
-                    </Button>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Button Grid.Column="3" x:Name="NextPageButton" Background="Transparent"  HorizontalAlignment="Right" Margin="0 20 20 0" IsEnabled="False" BorderThickness="0" Click="NextPageButton_Click" Style="{DynamicResource TransparentFocus}">
+                            <StackPanel >
+                                <Image  Source="/UI/DesignImages/Next.png" />
+                            </StackPanel>
+                        </Button>
+                    </Grid>
                 </StackPanel>
             </Viewbox>
         </Border>

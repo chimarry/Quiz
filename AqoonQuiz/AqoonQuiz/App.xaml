@@ -4,6 +4,7 @@
              xmlns:local="clr-namespace:AqoonQuiz"
              StartupUri="UI/StartupWindow.xaml">
     <Application.Resources>
+
         <Style x:Key="TransparentFocus" TargetType="{x:Type Button}">
             <Setter Property="Background" Value="Transparent"/>
             <Setter Property="Width" Value="70"/>
@@ -83,7 +84,7 @@
                                 <Setter Property="BorderBrush" TargetName="border" Value="#d6676e"/>
                             </Trigger>
                             <Trigger Property="IsEnabled" Value="False">
-                                <Setter Property="Opacity" TargetName="grid" Value="0.25"/>
+                                <Setter Property="Opacity" TargetName="grid" Value="0.7"/>
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
@@ -158,7 +159,7 @@
                                 <Setter Property="BorderBrush" TargetName="border" Value="#d6676e"/>
                             </Trigger>
                             <Trigger Property="IsEnabled" Value="False">
-                                <Setter Property="Opacity" TargetName="grid" Value="0.25"/>
+                                <Setter Property="Opacity" TargetName="grid" Value="0.7"/>
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
@@ -221,7 +222,7 @@
                                 <Setter Property="BorderBrush" TargetName="border" Value="#d6676e"/>
                             </Trigger>
                             <Trigger Property="IsEnabled" Value="False">
-                                <Setter Property="Opacity" TargetName="grid" Value="0.25"/>
+                                <Setter Property="Opacity" TargetName="grid" Value="0.7"/>
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>

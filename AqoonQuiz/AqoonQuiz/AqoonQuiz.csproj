@@ -8,8 +8,11 @@
 
   <ItemGroup>
     <None Remove="Data\Questions.csv" />
+    <None Remove="Data\Questions2.csv" />
     <None Remove="UI\DesignImages\Aqoon.png" />
+    <None Remove="UI\DesignImages\BrainLost.png" />
     <None Remove="UI\DesignImages\Next.png" />
+    <None Remove="UI\DesignImages\PinkyWin.png" />
     <None Remove="UI\DesignImages\Question.png" />
   </ItemGroup>
 
@@ -21,7 +24,13 @@
     <Content Include="UI\DesignImages\Aqoon.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="UI\DesignImages\BrainLost.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="UI\DesignImages\Next.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="UI\DesignImages\PinkyWin.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="UI\DesignImages\Question.png">
@@ -31,6 +40,9 @@
 
   <ItemGroup>
     <EmbeddedResource Include="Data\Questions.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Questions2.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>
